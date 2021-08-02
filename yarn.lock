@@ -2668,7 +2668,7 @@
     pino-pretty "5.1.0"
     uuid "8.3.2"
 
-"@redwoodjs/auth@0.35.2":
+"@redwoodjs/auth@0.35.2", "@redwoodjs/auth@^0.35.2":
   version "0.35.2"
   resolved "https://registry.yarnpkg.com/@redwoodjs/auth/-/auth-0.35.2.tgz#2b97dc4ddfb5b55ba6c5bebf9c5aadd7e7beea11"
   integrity sha512-4GBA6w+/r6/5ovbXLPlTFSG+43XvNBKG/o2Pxx5AY6A+5lg17uv/qA8HWy2YkJxpCpnZZqUhXH6oRngsb9B31g==
