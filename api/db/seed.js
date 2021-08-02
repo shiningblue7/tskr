@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
-const { PrismaClient } = require('@prisma/client')
+const {
+  PrismaClient
+} = require('@prisma/client')
 const dotenv = require('dotenv')
 
 dotenv.config()
@@ -13,27 +15,36 @@ const db = new PrismaClient()
  * @see https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#upsert
  * @see https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany
  */
+console.log('start')
 async function main() {
-  console.warn('Please define your seed data.')
+  console.log('Please define your seed data.')
 
   // // Change to match your data model and seeding needs
-  // const data = [
-  //   { name: 'alice', email: 'alice@example.com' },
-  //   { name: 'mark', email: 'mark@example.com' },
-  //   { name: 'jackie', email: 'jackie@example.com' },
-  //   { name: 'bob', email: 'bob@example.com' },
-  // ]
-
+  const resultUsers = await db.user.createMany({
+    data: [{
+        id: 1,
+        email: "noah@duffbeer.com",
+        name: "Noah North"
+      },
+      {
+        id: 2,
+        email: "neil@duffbeer.com",
+        name: "Neil North"
+      },
+    ],
+    skipDuplicates: true, // Supported with Postgres database
+  })
+  console.log(`Created ${resultUsers.count} users!`)
   // // Note: if using PostgreSQL, using `createMany` to insert multiple records is much faster
   // // @see: https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany
-  // return Promise.all(
-  //   data.map(async (user) => {
-  //     const record = await db.user.create({
-  //       data: { name: user.name, email: user.email },
-  //     })
-  //     console.log(record)
-  //   })
-  // )
+  //return Promise.all(
+  //  data.map(async (user) => {
+  //    const record = await db.user.create({
+  //      data: { name: user.name, email: user.email },
+  //    })
+  //    console.log(record)
+  //  })
+  //)
 }
 
 main()
