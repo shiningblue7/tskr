@@ -3,7 +3,8 @@ import { requireAuth } from 'src/lib/auth'
 
 // Used when the environment variable REDWOOD_SECURE_SERVICES=1
 export const beforeResolver = (rules) => {
-  rules.add(requireAuth)
+  rules.skip({ only: ['tasks'] })
+  //rules.add(requireAuth)
 }
 
 export const tasks = () => {
