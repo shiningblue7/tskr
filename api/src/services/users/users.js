@@ -10,10 +10,11 @@ export const users = () => {
   return db.user.findMany()
 }
 
-export const user = ({ id }) => {
-  return db.user.findUnique({
+export const user = async ({ id }) => {
+  let result = await db.user.findUnique({
     where: { id },
-  })
+  });
+  return result;
 }
 
 export const createUser = ({ input }) => {
