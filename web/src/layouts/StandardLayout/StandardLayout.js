@@ -1,8 +1,11 @@
 // web/src/layouts/BlogLayout/BlogLayout.js
 
 import { Link, routes } from '@redwoodjs/router'
+import { useAuth } from '@redwoodjs/auth'
 
 const StandardLayout = ({ children }) => {
+  const { logIn, logOut, isAuthenticated, currentUser, hasRole } = useAuth()
+
   return (
     <>
       <header>
@@ -13,15 +16,22 @@ const StandardLayout = ({ children }) => {
                 <em>Home</em>
               </Link>
             </li>
+            {!isAuthenticated && (<li>
+              <Link to={routes.signup()}>
+                <em>Signup</em>
+              </Link>
+            </li>)}
             <li>
-              <a href="/#">Login</a>
+            {isAuthenticated && currentUser && (<a onClick={logOut}>Log Out {currentUser.email}</a>)}
+            {!isAuthenticated && (<Link to={routes.login()}>Log In</Link>)}
             </li>
           </ul>
         </nav>
       </header>
 
+      { isAuthenticated && (
       <aside>
-        <ul>
+          <ul>
           <li>
             <Link to={routes.users()}>Users</Link>
           </li>
@@ -30,6 +40,7 @@ const StandardLayout = ({ children }) => {
           </li>
         </ul>
       </aside>
+      ) }
       <main>
         <article>{children}</article>
       </main>
