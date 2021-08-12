@@ -1,10 +1,13 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 // web/src/layouts/BlogLayout/BlogLayout.js
 
 import { Link, routes } from '@redwoodjs/router'
 import { useAuth } from '@redwoodjs/auth'
 
 const StandardLayout = ({ children }) => {
-  const { logIn, logOut, isAuthenticated, currentUser, hasRole } = useAuth()
+  const { logOut, isAuthenticated, currentUser } = useAuth()
 
   return (
     <>
@@ -25,7 +28,11 @@ const StandardLayout = ({ children }) => {
             )}
             <li>
               {isAuthenticated && currentUser && (
-                <a onClick={logOut}>Log Out {currentUser.name}</a>
+                <a onClick={logOut}>
+                  <span alt={JSON.stringify(currentUser)}>
+                    Log Out {currentUser.name}
+                  </span>
+                </a>
               )}
               {!isAuthenticated && <Link to={routes.login()}>Log In</Link>}
             </li>
