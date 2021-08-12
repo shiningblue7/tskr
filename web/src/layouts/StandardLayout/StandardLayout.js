@@ -16,31 +16,35 @@ const StandardLayout = ({ children }) => {
                 <em>Home</em>
               </Link>
             </li>
-            {!isAuthenticated && (<li>
-              <Link to={routes.signup()}>
-                <em>Signup</em>
-              </Link>
-            </li>)}
+            {!isAuthenticated && (
+              <li>
+                <Link to={routes.signup()}>
+                  <em>Signup</em>
+                </Link>
+              </li>
+            )}
             <li>
-            {isAuthenticated && currentUser && (<a onClick={logOut}>Log Out {currentUser.email}</a>)}
-            {!isAuthenticated && (<Link to={routes.login()}>Log In</Link>)}
+              {isAuthenticated && currentUser && (
+                <a onClick={logOut}>Log Out {currentUser.name}</a>
+              )}
+              {!isAuthenticated && <Link to={routes.login()}>Log In</Link>}
             </li>
           </ul>
         </nav>
       </header>
 
-      { isAuthenticated && (
-      <aside>
+      {isAuthenticated && (
+        <aside>
           <ul>
-          <li>
-            <Link to={routes.users()}>Users</Link>
-          </li>
-          <li>
-            <Link to={routes.tasks()}>Tasks</Link>
-          </li>
-        </ul>
-      </aside>
-      ) }
+            <li>
+              <Link to={routes.users()}>Users</Link>
+            </li>
+            <li>
+              <Link to={routes.tasks()}>Tasks</Link>
+            </li>
+          </ul>
+        </aside>
+      )}
       <main>
         <article>{children}</article>
       </main>
