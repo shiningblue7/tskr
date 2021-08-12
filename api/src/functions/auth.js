@@ -27,6 +27,9 @@ export const handler = async (event, context) => {
     // were included in the object given to the `signUp()` function you got
     // from `useAuth()`
     signupHandler: ({ username, hashedPassword, salt, userAttributes }) => {
+      if (!username.match(/.+?@.+?\..+?/)) {
+        throw new Error('Not a valid email address!')
+      }
       return db.user.create({
         data: {
           email: username,
