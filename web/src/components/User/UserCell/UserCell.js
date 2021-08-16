@@ -19,6 +19,5 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ user }) => {
-  console.log(user);
   return <User user={user} />
 }
