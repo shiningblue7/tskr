@@ -1,5 +1,5 @@
 import Group from 'src/components/Group/Group'
-import GroupMembersByGroup from 'src/components/GroupMembersByGroup'
+import GroupMembersByGroupCell from 'src/components/GroupMembersByGroupCell'
 
 export const QUERY = gql`
   query FindGroupById($id: Int!) {
@@ -25,7 +25,7 @@ export const Success = ({ group }) => {
   return (
     <>
       <Group group={group} />
-      <GroupMembersByGroup groupID={group} />
+      <GroupMembersByGroupCell groupID={group} />
     </>
   )
 }

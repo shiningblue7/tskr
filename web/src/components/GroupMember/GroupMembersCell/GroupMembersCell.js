@@ -9,7 +9,13 @@ export const QUERY = gql`
       createdAt
       updatedAt
       userId
+      user {
+        name
+      }
       groupId
+      group {
+        name
+      }
     }
   }
 `

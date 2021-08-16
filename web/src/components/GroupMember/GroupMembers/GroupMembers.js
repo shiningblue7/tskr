@@ -64,8 +64,8 @@ const GroupMembersList = ({ groupMembers }) => {
             <th>Id</th>
             <th>Created at</th>
             <th>Updated at</th>
-            <th>User id</th>
-            <th>Group id</th>
+            <th>User</th>
+            <th>Group</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -75,8 +75,8 @@ const GroupMembersList = ({ groupMembers }) => {
               <td>{truncate(groupMember.id)}</td>
               <td>{timeTag(groupMember.createdAt)}</td>
               <td>{timeTag(groupMember.updatedAt)}</td>
-              <td>{truncate(groupMember.userId)}</td>
-              <td>{truncate(groupMember.groupId)}</td>
+              <td>{truncate(groupMember.user.name)}</td>
+              <td>{truncate(groupMember.group.name)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

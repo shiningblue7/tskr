@@ -12,7 +12,7 @@ export const schema = gql`
   type Query {
     groupMembers: [GroupMember!]!
     groupMember(id: Int!): GroupMember
-    groupMembersByGroup(groupId: Int!): [GroupMember!]!
+    groupMembersByGroup(id: Int!): [GroupMember!]!
   }
 
   input CreateGroupMemberInput {

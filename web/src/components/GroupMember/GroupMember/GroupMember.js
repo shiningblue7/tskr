@@ -67,12 +67,12 @@ const GroupMember = ({ groupMember }) => {
               <td>{timeTag(groupMember.updatedAt)}</td>
             </tr>
             <tr>
-              <th>User id</th>
-              <td>{groupMember.userId}</td>
+              <th>User</th>
+              <td>{groupMember.user.name}</td>
             </tr>
             <tr>
-              <th>Group id</th>
-              <td>{groupMember.groupId}</td>
+              <th>Group</th>
+              <td>{groupMember.group.name}</td>
             </tr>
           </tbody>
         </table>

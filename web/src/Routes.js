@@ -17,12 +17,6 @@ import StandardLayout from './layouts/StandardLayout/StandardLayout'
 const Routes = () => {
   return (
     <Router>
-      <Set wrap={GroupMembersLayout}>
-        <Route path="/group-members/new" page={GroupMemberNewGroupMemberPage} name="newGroupMember" />
-        <Route path="/group-members/{id:Int}/edit" page={GroupMemberEditGroupMemberPage} name="editGroupMember" />
-        <Route path="/group-members/{id:Int}" page={GroupMemberGroupMemberPage} name="groupMember" />
-        <Route path="/group-members" page={GroupMemberGroupMembersPage} name="groupMembers" />
-      </Set>
       <Route path="/login" page={LoginPage} name="login" />
       <Route path="/signup" page={SignupPage} name="signup" />
       <Set wrap={StandardLayout}>
@@ -45,6 +39,12 @@ const Routes = () => {
             <Route path="/users/{id:Int}/edit" page={UserEditUserPage} name="editUser" />
             <Route path="/users/{id:Int}" page={UserUserPage} name="user" />
             <Route path="/users" page={UserUsersPage} name="users" />
+          </Set>
+          <Set wrap={GroupMembersLayout}>
+            <Route path="/group-members/new" page={GroupMemberNewGroupMemberPage} name="newGroupMember" />
+            <Route path="/group-members/{id:Int}/edit" page={GroupMemberEditGroupMemberPage} name="editGroupMember" />
+            <Route path="/group-members/{id:Int}" page={GroupMemberGroupMemberPage} name="groupMember" />
+            <Route path="/group-members" page={GroupMemberGroupMembersPage} name="groupMembers" />
           </Set>
         </Private>
       </Set>

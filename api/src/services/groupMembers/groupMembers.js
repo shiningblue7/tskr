@@ -10,10 +10,10 @@ export const groupMembers = () => {
   return db.groupMember.findMany()
 }
 
-export const groupMembersByGroup = (groupId) => {
-  console.log('groupMembersByGroup', groupId)
+export const groupMembersByGroup = (id) => {
+  console.log('groupMembersByGroup', id)
   return db.groupMember.findMany({
-    where: groupId,
+    where: { group: id },
   })
 }
 
