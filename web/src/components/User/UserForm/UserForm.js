@@ -46,38 +46,21 @@ const UserForm = (props) => {
         <FieldError name="email" className="rw-field-error" />
 
         <Label
-          name="hashedPassword"
+          name="name"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Hashed password
+          Name
         </Label>
         <TextField
-          name="hashedPassword"
-          defaultValue={props.user?.hashedPassword}
+          name="name"
+          defaultValue={props.user?.name}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
 
-        <FieldError name="hashedPassword" className="rw-field-error" />
-
-        <Label
-          name="salt"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Salt
-        </Label>
-        <TextField
-          name="salt"
-          defaultValue={props.user?.salt}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-
-        <FieldError name="salt" className="rw-field-error" />
+        <FieldError name="name" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

@@ -7,8 +7,7 @@ export const QUERY = gql`
     users {
       id
       email
-      hashedPassword
-      salt
+      name
     }
   }
 `

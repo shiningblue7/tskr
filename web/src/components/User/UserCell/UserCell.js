@@ -5,8 +5,7 @@ export const QUERY = gql`
     user: user(id: $id) {
       id
       email
-      hashedPassword
-      salt
+      name
     }
   }
 `
