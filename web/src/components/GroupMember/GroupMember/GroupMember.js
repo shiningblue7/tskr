@@ -10,13 +10,13 @@ const DELETE_GROUP_MEMBER_MUTATION = gql`
   }
 `
 
-const jsonDisplay = (obj) => {
+/*const jsonDisplay = (obj) => {
   return (
     <pre>
       <code>{JSON.stringify(obj, null, 2)}</code>
     </pre>
   )
-}
+}*/
 
 const timeTag = (datetime) => {
   return (
@@ -26,9 +26,9 @@ const timeTag = (datetime) => {
   )
 }
 
-const checkboxInputTag = (checked) => {
+/*const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />
-}
+}*/
 
 const GroupMember = ({ groupMember }) => {
   const [deleteGroupMember] = useMutation(DELETE_GROUP_MEMBER_MUTATION, {
