@@ -22,9 +22,9 @@ const truncate = (text) => {
   return output
 }
 
-const jsonTruncate = (obj) => {
+/*const jsonTruncate = (obj) => {
   return truncate(JSON.stringify(obj, null, 2))
-}
+}*/
 
 const timeTag = (datetime) => {
   return (
@@ -34,9 +34,9 @@ const timeTag = (datetime) => {
   )
 }
 
-const checkboxInputTag = (checked) => {
+/*const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />
-}
+}*/
 
 const GroupMembersList = ({ groupMembers }) => {
   const [deleteGroupMember] = useMutation(DELETE_GROUP_MEMBER_MUTATION, {

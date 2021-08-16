@@ -10,25 +10,25 @@ const DELETE_USER_MUTATION = gql`
   }
 `
 
-const jsonDisplay = (obj) => {
+/*const jsonDisplay = (obj) => {
   return (
     <pre>
       <code>{JSON.stringify(obj, null, 2)}</code>
     </pre>
   )
-}
+}*/
 
-const timeTag = (datetime) => {
+/*const timeTag = (datetime) => {
   return (
     <time dateTime={datetime} title={datetime}>
       {new Date(datetime).toUTCString()}
     </time>
   )
-}
+}*/
 
-const checkboxInputTag = (checked) => {
+/*const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />
-}
+}*/
 
 const User = ({ user }) => {
   const [deleteUser] = useMutation(DELETE_USER_MUTATION, {
